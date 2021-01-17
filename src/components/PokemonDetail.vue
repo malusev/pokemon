@@ -90,7 +90,6 @@ export default {
       imageUrl:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/",
       pokemonUrl: "https://pokeapi.co/api/v2/pokemon/",
-      show: false,
       pokemon: {},
       pokemonSpecies: {},
       pokemonEvolution: {},
@@ -106,15 +105,11 @@ export default {
         })
         .then((data) => {
           this.pokemon = data;
-          this.show = true;
           this.fetchSpecies();
         })
         .catch((error) => {
           console.log(error);
         });
-    },
-    closeDetail() {
-      this.$emit("closeDetail");
     },
     fetchSpecies() {
       const req = new Request(this.pokemon.species.url);

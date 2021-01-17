@@ -5,7 +5,7 @@
         class="b-pokemon-list__block text-center col-12 col-md-4 mb-4 pt-3"
         v-for="(pokemon, index) in pokemons"
         :key="'poke' + index"
-        @click="setPokemonUrl(pokemon.id)"
+        @click="goToPokemonDetail(pokemon.id)"
       >
         <div class="b-pokemon-list__block-image mb-2 d-flex justify-content-center align-items-center">
           <img
@@ -28,9 +28,7 @@ export default {
   props: ["imageUrl", "apiUrl"],
   data: () => {
     return {
-      pokemons: [],
-      nextUrl: "",
-      currentUrl: "",
+      pokemons: []
     };
   },
   methods: {
@@ -71,7 +69,7 @@ export default {
       this.currentUrl = this.nextUrl;
       this.fetchData();
     },
-    setPokemonUrl(id) {
+    goToPokemonDetail(id) {
       this.$router.push({ name: 'PokemonDetail', query: { id } });
     },
   },
