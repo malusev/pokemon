@@ -1,9 +1,11 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app">    
+    <div class="b-header d-flex align-items-center justify-content-center">     
+      <router-link to='/'>
+        <h1 class="b-header-title m-0">Pokedex</h1>
+      </router-link>
     </div>
+
     <router-view/>
   </div>
 </template>
@@ -14,18 +16,26 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #323232;
 }
 
-#nav {
-  padding: 30px;
+.b-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 62px;
+  background-color: #f5f5f5;
+  box-shadow: 1px 1px 5px 0px rgba(43, 36, 36, 0.75);
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(43, 36, 36, 0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(43, 36, 36, 0.75);
+  z-index: 10;
 
   a {
-    font-weight: bold;
-    color: #2c3e50;
+    color: #323232;
 
-    &.router-link-exact-active {
-      color: #42b983;
+    &:hover {
+      text-decoration: none;
+      color: #323232;
     }
   }
 }
