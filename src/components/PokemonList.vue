@@ -25,6 +25,7 @@
 
 <script>
 export default {
+  name: 'PokemonList',
   props: ["imageUrl", "apiUrl"],
   data: () => {
     return {
